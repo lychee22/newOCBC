@@ -1,0 +1,82 @@
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-sider {
+  background-color: #001529;
+  transition: all 0.3s;
+}
+
+.sider-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #001529;
+  border-bottom: 1px solid #1f2f3d;
+}
+
+.logo-text {
+  color: white;
+  font-size: 18px;
+}
+
+.app-menu {
+  background-color: #001529;
+  border-right: none;
+}
+
+.app-menu .ant-menu-item {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.app-menu .ant-menu-item-selected {
+  background-color: #1890ff;
+  color: white;
+}
+
+.app-menu .ant-menu-item:hover {
+  color: white;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn {
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-badge {
+  margin-right: 16px;
+}
+
+.app-content {
+  margin: 24px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 8px;
+  min-height: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}

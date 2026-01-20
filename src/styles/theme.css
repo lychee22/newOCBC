@@ -1,0 +1,32 @@
+﻿/* 主题相关样式 */
+.ant-btn-primary {
+  border-radius: 8px;
+}
+
+.ant-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.ant-input {
+  border-radius: 8px;
+}
+
+/* 响应式布局 */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    padding: 0 24px;
+  }
+}
