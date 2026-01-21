@@ -3,6 +3,8 @@ import { Card, Form, Input, Button, Checkbox, Typography, Divider, Space, messag
 import { UserOutlined, LockOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { mockLogin } from '../mock/users';
+import { useUserStore } from '../store/modules/user';
+import { usePermissionStore } from '../store/modules/permission';
 import './LoginPage.css';
 
 const { Title, Text } = Typography;
@@ -11,6 +13,8 @@ const LoginPage: React.FC = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { setUserInfo, setToken } = useUserStore();
+  const { generateRoutes } = usePermissionStore();
 
   const onFinish = async (values: any) => {
     setLoading(true);
@@ -20,10 +24,30 @@ const LoginPage: React.FC = () => {
       
       if (user) {
         console.log('Login success:', user);
-        // 保存登录状态
+        
+        // 设置用户状态
+        setUserInfo({
+          loginID: user.username,
+          name: user.name,
+          role: user.role,
+          env: 'dev'
+        });
+        setToken('mock-token');
+        
+        // 保存登录状态到localStorage（兼容性）
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userRole', user.role);
         localStorage.setItem('currentUser', JSON.stringify(user));
+        
+        // 生成基于角色的路由和菜单
+        try {
+          await generateRoutes(user.role);
+          console.log('Routes generated successfully for user:', user.username);
+        } catch (error) {
+          console.error('Failed to generate routes:', error);
+          message.warning('菜单加载失败，部分功能可能不可用');
+        }
+        
         message.success('登录成功！');
         navigate('/');
       } else {
