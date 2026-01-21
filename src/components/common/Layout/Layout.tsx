@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Avatar, Dropdown, Space, Button, Typography, Badge } from 'antd';
-import { 
+import {
   MenuFoldOutlined, 
   MenuUnfoldOutlined, 
   UserOutlined, 
@@ -14,17 +14,13 @@ import {
   DollarOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import './Layout.css';
 
 const { Header, Sider, Content } = Layout;
 const { Text } = Typography;
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const LayoutComponent: React.FC<LayoutProps> = ({ children }) => {
+const LayoutComponent: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
 
@@ -145,7 +141,7 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children }) => {
           </Space>
         </Header>
         <Content className="app-content">
-          {children}
+          <Outlet />
         </Content>
       </Layout>
     </Layout>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, InputNumber, Divider, Tag } from 'antd';
 import { SearchOutlined, EditOutlined, DeleteOutlined, SaveOutlined, CloseOutlined } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -156,7 +156,6 @@ const SpreadPage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="spread-page">
         <Title level={2}>Spread管理</Title>
         <Text type="secondary">查看和管理汇率差价</Text>
@@ -313,7 +312,6 @@ const SpreadPage: React.FC = () => {
           />
         </Card>
       </div>
-    </LayoutComponent>
   );
 };
 

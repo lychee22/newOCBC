@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, DatePicker, Tabs } from 'antd';
 import { SearchOutlined, DownloadOutlined, BarChartOutlined, LineChartOutlined, PieChartOutlined } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -118,7 +118,6 @@ const ReportPage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="report-page">
         <Title level={2}>报表</Title>
         <Text type="secondary">查看交易报表和统计数据</Text>
@@ -297,7 +296,6 @@ const ReportPage: React.FC = () => {
           </TabPane>
         </Tabs>
       </div>
-    </LayoutComponent>
   );
 };
 

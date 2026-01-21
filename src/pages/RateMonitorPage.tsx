@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, DatePicker, Tag, Tabs, Input } from 'antd';
 import { SearchOutlined, ReloadOutlined, EyeOutlined, DownloadOutlined } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -141,7 +141,6 @@ const RateMonitorPage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="rate-monitor-page">
         <Title level={2}>汇率监控</Title>
         <Text type="secondary">监控汇率走势和变化</Text>
@@ -312,7 +311,6 @@ const RateMonitorPage: React.FC = () => {
           </TabPane>
         </Tabs>
       </div>
-    </LayoutComponent>
   );
 };
 

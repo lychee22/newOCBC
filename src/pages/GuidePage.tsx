@@ -10,7 +10,7 @@ import {
   UserOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 
@@ -64,7 +64,6 @@ const GuidePage: React.FC = () => {
   ];
 
   return (
-    <LayoutComponent>
       <div className="guide-page">
         <Title level={2}>系统使用指南</Title>
         <Text type="secondary">欢迎使用FXOL外汇交易系统，以下是系统各功能模块的使用说明</Text>
@@ -87,7 +86,6 @@ const GuidePage: React.FC = () => {
           </Space>
         </div>
       </div>
-    </LayoutComponent>
   );
 };
 

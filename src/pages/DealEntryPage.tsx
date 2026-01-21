@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, DatePicker, InputNumber, Divider } from 'antd';
 import { SearchOutlined, PlusOutlined, EditOutlined, DeleteOutlined, SaveOutlined, CloseOutlined } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -154,7 +154,6 @@ const DealEntryPage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="deal-entry-page">
         <Title level={2}>交易入口</Title>
         
@@ -293,7 +292,6 @@ const DealEntryPage: React.FC = () => {
           />
         </Card>
       </div>
-    </LayoutComponent>
   );
 };
 

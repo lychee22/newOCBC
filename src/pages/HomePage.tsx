@@ -7,7 +7,7 @@ import {
   ArrowUpOutlined, 
   ArrowDownOutlined 
 } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 
@@ -55,8 +55,7 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-    <LayoutComponent>
-      <div className="home-page">
+    <div className="home-page">
         <Title level={2} className="page-title">Dashboard</Title>
         
         {/* 统计卡片 */}
@@ -194,7 +193,6 @@ const HomePage: React.FC = () => {
           </Col>
         </Row>
       </div>
-    </LayoutComponent>
   );
 };
 

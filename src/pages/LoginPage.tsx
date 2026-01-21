@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Card, Form, Input, Button, Checkbox, Typography, Divider, Space } from 'antd';
+import { Card, Form, Input, Button, Checkbox, Typography, Divider, Space, message } from 'antd';
 import { UserOutlined, LockOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import { mockLogin } from '../mock/users';
 import './LoginPage.css';
 
 const { Title, Text } = Typography;
@@ -14,12 +15,23 @@ const LoginPage: React.FC = () => {
   const onFinish = async (values: any) => {
     setLoading(true);
     try {
-      // 模拟登录请求
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Login success:', values);
-      navigate('/');
+      // 使用模拟数据登录
+      const user = await mockLogin(values.username, values.password);
+      
+      if (user) {
+        console.log('Login success:', user);
+        // 保存登录状态
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userRole', user.role);
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        message.success('登录成功！');
+        navigate('/');
+      } else {
+        message.error('用户名或密码错误');
+      }
     } catch (error) {
       console.error('Login failed:', error);
+      message.error('登录失败，请稍后重试');
     } finally {
       setLoading(false);
     }
@@ -34,6 +46,9 @@ const LoginPage: React.FC = () => {
         </div>
         <Card className="login-card">
           <Title level={3} className="login-title">登录</Title>
+          <div className="login-hint">
+            <Text type="secondary">测试账号：admin/admin123 或 user/user123</Text>
+          </div>
           <Form
             form={form}
             name="login"

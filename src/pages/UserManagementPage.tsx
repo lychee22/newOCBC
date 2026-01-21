@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, Input, Tag, Popconfirm } from 'antd';
 import { SearchOutlined, EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -125,7 +125,6 @@ const UserManagementPage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="user-management-page">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <div>
@@ -189,7 +188,6 @@ const UserManagementPage: React.FC = () => {
           />
         </Card>
       </div>
-    </LayoutComponent>
   );
 };
 

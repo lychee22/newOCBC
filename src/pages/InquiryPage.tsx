@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, DatePicker, InputNumber, Tag, message } from 'antd';
 import { SearchOutlined, CopyOutlined } from '@ant-design/icons';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -123,7 +123,6 @@ const InquiryPage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="inquiry-page">
         <Title level={2}>询价</Title>
         <Text type="secondary">获取实时汇率信息</Text>
@@ -249,7 +248,6 @@ const InquiryPage: React.FC = () => {
           </Col>
         </Row>
       </div>
-    </LayoutComponent>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Form, Select, Button, Table, Space, Typography, Row, Col, Upload, message, Input } from 'antd';
 import { SearchOutlined, UploadOutlined, DownloadOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
-import LayoutComponent from '../components/common/Layout/Layout';
+
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -147,7 +147,6 @@ const FileMaintenancePage: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <div className="file-maintenance-page">
         <Title level={2}>文件维护</Title>
         <Text type="secondary">管理系统配置文件</Text>
@@ -235,7 +234,6 @@ const FileMaintenancePage: React.FC = () => {
           </Col>
         </Row>
       </div>
-    </LayoutComponent>
   );
 };
 
